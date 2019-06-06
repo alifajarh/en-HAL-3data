@@ -263,8 +263,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void ext_handler1() {
 	change1 = 0;
-	state_encoder_a1 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0);
-	state_encoder_b1 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_1);
+	state_encoder_a1 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+	state_encoder_b1 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1);
 	currstate1 = (state_encoder_a1 << 1) | state_encoder_b1;
 	if (((currstate1 ^ prevstate1) != INVALID) && (currstate1 != prevstate1)) {
 		change1 = (prevstate1 & PREV_MASK) ^ ((currstate1 & CURR_MASK) >> 1);
